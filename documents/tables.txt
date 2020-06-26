@@ -1,0 +1,47 @@
+
+Teacher
+-------
+id
+name
+email
+password
+
+
+Course
+------
+id
+teacher_id
+department - 'Humanity', 'Science', 'English', 'Physical Ed'
+name - 'Art', 'Literature', 'Biology', 'Chemistry', 'English', 'AP English', 'Track', 'Football', etc
+roster_id
+
+
+Roster
+------
+id
+course_id
+student_id
+
+
+Student
+-------
+id
+name - first last
+
+
+Grade
+-----
+id
+student_id
+assignment - 'H'omework(25%), 'Q'uiz(25%), 'T'est(50%)
+score - 0-100
+course_id
+
+
+Attendance
+----------
+id
+student_id
+school_date
+status - 'P'resent, 'A'bsent
+course_id

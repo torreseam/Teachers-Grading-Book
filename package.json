@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "teachers-grading-book",
   "version": "1.0.0",
   "description": "",
@@ -29,4 +30,24 @@
     "url": "https://github.com/torreseam/Teachers-Grading-Book/issues"
   },
   "homepage": "https://github.com/torreseam/Teachers-Grading-Book#readme"
+=======
+  "name": "Teachers-Grading-Book",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattkohl82/Teachers-Grading-Book.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mattkohl82/Teachers-Grading-Book/issues"
+  },
+  "homepage": "https://github.com/mattkohl82/Teachers-Grading-Book#readme"
+>>>>>>> be7894a3630fe7879e7b245cef4680f4e1159cc4
 }
