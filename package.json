@@ -1,0 +1,20 @@
+{
+  "name": "Teachers-Grading-Book",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattkohl82/Teachers-Grading-Book.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mattkohl82/Teachers-Grading-Book/issues"
+  },
+  "homepage": "https://github.com/mattkohl82/Teachers-Grading-Book#readme"
+}
