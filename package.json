@@ -48,6 +48,19 @@
   "bugs": {
     "url": "https://github.com/mattkohl82/Teachers-Grading-Book/issues"
   },
+<<<<<<< HEAD
   "homepage": "https://github.com/mattkohl82/Teachers-Grading-Book#readme"
 >>>>>>> be7894a3630fe7879e7b245cef4680f4e1159cc4
+=======
+  "homepage": "https://github.com/mattkohl82/Teachers-Grading-Book#readme",
+  "dependencies": {
+    "connect-session-sequelize": "^7.0.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
+    "express-session": "^1.17.1",
+    "mysql2": "^2.1.0",
+    "sequelize": "^6.2.0"
+  }
+>>>>>>> 8782a8bfea099fd2d231bac7be6e8ce35f4808da
 }

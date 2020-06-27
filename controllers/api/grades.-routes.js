@@ -3,8 +3,8 @@ const { Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
-    Comment.findAll({})
-        .then(dbCommentData => res.json(dbCommentData))
+    Grade.findAll({})
+        .then(dbGradeData => res.json(dbGradeData))
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
@@ -14,13 +14,11 @@ router.get('/', (req, res) => {
 router.post('/', withAuth, (req, res) => {
     // check the session
     if (req.session) {
-        Comment.create({
-            comment_text: req.body.comment_text,
-            post_id: req.body.post_id,
-            // use the id from the session
-            user_id: req.session.user_id,
+        Grade.create({
+            grade_id: req.body.grade_id,
+            // post_id: req.body.post_id,
         })
-            .then(dbCommentData => res.json(dbCommentData))
+            .then(dbGradetData => res.json(dbGradeData))
             .catch(err => {
                 console.log(err);
                 res.status(400).json(err);
@@ -29,17 +27,17 @@ router.post('/', withAuth, (req, res) => {
 });
 
 router.delete('/:id', withAuth, (req, res) => {
-    Comment.destroy({
+    Grade.destroy({
         where: {
             id: req.params.id
         }
     })
-        .then(dbCommentData => {
-            if (!dbCommentData) {
-                res.status(404).json({ message: 'No comment found with this id' });
+        .then(dbGradeData => {
+            if (!dbGradeData) {
+                res.status(404).json({ message: 'No grades found' });
                 return;
             }
-            res.json(dbCommentData);
+            res.json(dbGradeData);
         })
         .catch(err => {
             console.log(err);
