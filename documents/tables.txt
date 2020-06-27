@@ -11,7 +11,7 @@ Course
 ------
 id
 teacher_id
-department - 'Humanity', 'Science', 'English', 'Physical Ed'
+department - 'Humanity', 'Science', 'English', 'Physical Ed', "Math'
 name - 'Art', 'Literature', 'Biology', 'Chemistry', 'English', 'AP English', 'Track', 'Football', etc
 roster_id
 
