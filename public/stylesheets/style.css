@@ -89,7 +89,7 @@ footer .repo:hover {
     word-spacing: -30px;
 }
 
-.course-type {
+.department {
     width: 100%;
     height: 6vh;
     text-align-last: center;
@@ -99,5 +99,21 @@ footer .repo:hover {
 .class-type {
     margin-top: 10px;
 }
+
+.course-name {
+    font-size: 2rem;
+    text-align-last: center;
+}
+
+.container2 h1 {
+    word-spacing: 1px;
+}
+
+/* .spreadsheet {
+
+} */
+
+
+
   
 
