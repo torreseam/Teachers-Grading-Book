@@ -21,10 +21,6 @@ Course.init(
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    roster_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
     department: {
       type: DataTypes.STRING,
       allowNull: false
