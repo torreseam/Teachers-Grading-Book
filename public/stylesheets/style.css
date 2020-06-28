@@ -113,7 +113,11 @@ footer .repo:hover {
 
 } */
 
-
+.gradebook-header {
+    background-color: aquamarine;
+    color: black;
+    font-weight: bold;
+}
 
   
 
