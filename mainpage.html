@@ -13,17 +13,30 @@
       <nav class="d-flex justify-content-between navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand" href="./mainpage.html"><h1>Grading Book</h1></a>
         <div class="dropleft">
-            <button class="btn btn-outline-dark rounded-pill bg-info dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><h3>Admin</h3>
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <button class="dropdown-item" type="button">Create Course</button>
-                <button class="dropdown-item" type="button">Add Student</button>
-                <button class="dropdown-item" type="button">Log-out</button>
-            </div>
+          <button class="btn btn-lg btn-outline-dark rounded-pill bg-info dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <button class="dropdown-item" type="button">Create Course</button>
+            <button class="dropdown-item" type="button">Add Student</button>
+            <button class="dropdown-item" type="button">Log-out</button>
+          </div>
         </div>
-    </nav>
+      </nav>
+
+      <form class="container2 d-flex flex-column justify-content-center align-items-center">
+        <h1>Add a Student</h1>
+        <div class="class-type d-flex flex-column justify-content-center align-items-center">
+            <label for="course-name"><h2>Students Name</h2></label>
+            <input class="course-name" type="text" id="class-type"placeholder="Enter Name Here"/>
+        </div>
+        <div>
+            <button class="btn btn-outline-dark rounded-pill bg-info" type="submit">Submit</button>
+        </div>
+    </form>
+
       
-    
+
+      
 
       <footer class="navbar navbar-expand-lg navbar-light" id="footer">
         <div class="collapse navbar-collapse" id="navbarText">
