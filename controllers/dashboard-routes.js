@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const {  Teacher } = require('../models');
+const { Teacher, Student } = require('../models');
 // const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
@@ -22,17 +22,16 @@ router.get('/', (req, res) => {
                     'department'
                 ],
                 include: {
-                    model: Teacher,
-                    attributes: ['name']
+                    model: Student,
+                    attributes: ['name', 'id']
                 }
             },
             {
-                model: Teacher,
-                attributes: ['name']
+                model: Student,
+                attributes: ['name', 'id' ]
             }
         ]
     }).then(dbPostData => {
-        // serialize data before passing to template
         const posts = dbPostData.map(post => post.get({ plain: true }));
         res.render('dashboard', { posts, loggedIn: true });
     })
@@ -71,7 +70,6 @@ router.get('/edit/:id', (req, res) => {
             }
         ]
     }).then(dbPostData => {
-        // serialize data before passing to template
         const posts = dbPostData.map(post => post.get({ plain: true }));
         res.render('dashboard', { posts, loggedIn: true });
     })

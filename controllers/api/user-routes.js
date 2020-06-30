@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Course, Teacher, Student } = require('../../models');
 const sequelize = require('../../config/connection');
-const withAuth = require('../../utils/auth');
+// const withAuth = require('../../utils/auth');
 
 // POST /api/users
 router.post('/', (req, res) => {
@@ -24,6 +24,7 @@ router.post('/', (req, res) => {
 
 // LOGIN
 router.post('/login', (req, res) => {
+    console.log('post/login')
     User.findOne({
         where: {
             name: req.body.name

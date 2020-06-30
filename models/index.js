@@ -53,4 +53,13 @@ Student.belongsToMany(
   }
 )
 
+Student.hasMany(Grade, {
+  foreignKey: 'student_id'
+});
+
+Grade.belongsTo(Student, {
+  foreignKey: 'student_id',
+});
+
+
 module.exports = { Teacher, Course, Student, CourseStudent, Grade };
