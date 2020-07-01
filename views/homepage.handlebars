@@ -6,9 +6,11 @@
 
 <nav class="d-flex justify-content-between navbar navbar-expand-lg navbar-light">
     <a class="navbar-brand" href="/"><h1>Grading Book</h1></a>
+
     <a href="/login"><h2>login</h2></a>
     <a href="/signup"><h2>signup</h2></a>
 
+    {{!-- {{#if loggedIn}} --}}
     <div class="dropleft">
         <button class="btn btn-lg btn-outline-dark rounded-pill bg-info dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin
         </button>
@@ -18,6 +20,13 @@
             <button id="logout" class="dropdown-item" type="button">Log-out</button>
         </div>
     </div>
+  {{!-- {{else}}
+      <a href="/login"><h2>login</h2></a>
+      <a href="/signup"><h2>signup</h2></a>
+  {{/if}} --}}
+    
+
+    
 </nav>
 
 <ol class="">
@@ -28,8 +37,8 @@
         <p {{course.course_url}}>{{course.title}}</p>
         <span>({{course.course_url}})</span>
       </div>
-      <div class="">
-        {{course.user.username}}
+      <div class="card-footer">
+        {{course.user.username}} | <a href="/course/{{course.id}}"><h4>Edit</h4></a> | <a href="/course/{{course.id}}"><h4>Delete</h4></a>
       </div>
     </article>
   </li>

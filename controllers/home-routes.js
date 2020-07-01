@@ -19,7 +19,10 @@ router.get('/', (req, res) => {
     })
       .then(dbCourseData => {
         const courses = dbCourseData.map(course => course.get({ plain: true }));
-        res.render('homepage', { courses });
+        res.render('homepage', { 
+          courses
+          // loggedIn: req.session.loggedIn
+        });
       })
       .catch(err => {
         console.log(err);
@@ -33,6 +36,42 @@ router.get('/', (req, res) => {
 
   router.get('/signup', (req, res) => {
     res.render('signup');
+  });
+
+  
+router.get('/course/:id', (req, res) => {
+    Course.findOne({
+      where: {
+        id: req.params.id
+      },
+      attributes: [
+        'id',
+        'course_url',
+        'title'
+      ],
+      include: [
+        {
+          model: User,
+          attributes: ['username']
+        }
+      ]
+    })
+      .then(dbCourseData => {
+        if (!dbCourseData) {
+          res.status(404).json({ message: 'No course found with this id' });
+          return;
+        }
+  
+        // serialize the data
+        const course = dbCourseData.get({ plain: true });
+  
+        // pass data to template
+        res.render('singleclass', { course });
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
   });
 
 module.exports = router;
