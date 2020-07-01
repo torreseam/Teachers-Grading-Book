@@ -4,7 +4,7 @@ const { Course, User } = require('../../models');
 // get all users
 router.get('/', (req, res) => {
   Course.findAll({
-    attributes: ['id', 'course_url', 'title', 'created_at'],
+    attributes: ['id', 'course_url', 'title'],
     order: [['created_at', 'DESC']], 
     include: [
       {
@@ -25,7 +25,7 @@ router.get('/:id', (req, res) => {
     where: {
       id: req.params.id
     },
-    attributes: ['id', 'course_url', 'title', 'created_at'],
+    attributes: ['id', 'course_url', 'title'],
     include: [
       {
         model: User,
@@ -47,7 +47,7 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  // expects {title: 'Taskmaster goes public!', Course_url: 'https://taskmaster.com/press', user_id: 1}
+  // expects {title: 'History', course_url: 'US History', user_id: 1}
   Course.create({
     title: req.body.title,
     course_url: req.body.course_url,
