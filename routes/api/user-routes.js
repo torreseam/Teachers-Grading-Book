@@ -1,7 +1,10 @@
 const router = require('express').Router();
-const { Course, Teacher, Student } = require('../../models');
+const { Course, User, Student } = require('../../models');
 const sequelize = require('../../config/connection');
 // const withAuth = require('../../utils/auth');
+
+
+
 
 // POST /api/users
 router.post('/', (req, res) => {
@@ -27,7 +30,7 @@ router.post('/login', (req, res) => {
     console.log('post/login')
     User.findOne({
         where: {
-            name: req.body.name
+            email: req.body.email
         }
     }).then(dbUserData => {
         if (!dbUserData) {
@@ -44,7 +47,7 @@ router.post('/login', (req, res) => {
 
         req.session.save(() => {
             // declare session variables
-            req.session.user_id = dbUserData.id;
+            req.session.user.id = dbUserData.id;
             req.session.username = dbUserData.username;
             req.session.loggedIn = true;
 

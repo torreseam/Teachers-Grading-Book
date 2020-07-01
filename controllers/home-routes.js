@@ -1,11 +1,11 @@
-const router = require('express').Router();
-const sequelize = require('../config/connection');
-const { Course } = require('../models');
+// const router = require('express').Router();
+// const sequelize = require('../config/connection');
+// const { Course } = require('../models');
 
-router.get('/', (req, res) => {
-   // res.render('gradebook', {Course})
-      res.render("log-in")
-});
+// router.get('/', (req, res) => {
+//    // res.render('gradebook', {Course})
+//       res.render("log-in")
+// });
 
 // router.get('/login', (req, res) => {
 //    if (req.session.loggedIn) {
@@ -17,4 +17,4 @@ router.get('/', (req, res) => {
 // });
 
 
-module.exports = router;
+// module.exports = router;

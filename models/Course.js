@@ -1,10 +1,10 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-// create our Class model
+// create our Course model
 class Course extends Model {}
 
-// define table columns and configuration
+// create fields/columns for Course model
 Course.init(
   {
     id: {
@@ -13,22 +13,27 @@ Course.init(
       primaryKey: true,
       autoIncrement: true
     },
-    name: {
+    title: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    teacher_id: {
+    course_url: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        isURL: true
+      }
+    },
+    user_id: {
       type: DataTypes.INTEGER,
-      allowNull: false
-    },
-    department: {
-      type: DataTypes.STRING,
-      allowNull: false
+      references: {
+        model: 'user',
+        key: 'id'
+      }
     }
   },
   {
     sequelize,
-    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'course'
