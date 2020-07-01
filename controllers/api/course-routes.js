@@ -5,7 +5,6 @@ const { Course, User } = require('../../models');
 router.get('/', (req, res) => {
   Course.findAll({
     attributes: ['id', 'course_url', 'title'],
-    order: [['created_at', 'DESC']], 
     include: [
       {
         model: User,

@@ -3,6 +3,7 @@ const sequelize = require('../config/connection');
 const { Course, User } = require('../models');
 
 router.get('/', (req, res) => {
+  console.log(req.session);
     Course.findAll({
       attributes: [
         'id',
