@@ -15,7 +15,7 @@
         <button class="btn btn-lg btn-outline-dark rounded-pill bg-info dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <button class="dropdown-item" type="button">Create Course</button>
+            <a href="/createcourse"><button class="dropdown-item" type="button">Create Course</button></a>
             <button class="dropdown-item" type="button">Add Student</button>
             <button id="logout" class="dropdown-item" type="button">Log-out</button>
         </div>
@@ -24,24 +24,22 @@
       <a href="/login"><h2>login</h2></a>
       <a href="/signup"><h2>signup</h2></a>
   {{/if}} --}}
-    
-
-    
 </nav>
 
-<ol class="">
   {{#each courses as |course|}}
-  <li>
-    <article class="card" style="max-width: 25vw; margin-bottom: 5px">
+  <div class="container ">
+    <article class="col card" style="max-width: 25vw; margin-bottom: 5px">
       <div class="card-header">
         <p {{course.course_url}}>{{course.title}}</p>
         <span>({{course.course_url}})</span>
       </div>
       <div class="card-footer">
-        {{course.user.username}} | <a href="/course/{{course.id}}"><h4>Edit</h4></a> | <a href="/course/{{course.id}}"><h4>Delete</h4></a>
+        {{course.user.username}} | <a href="/course/{{course.id}}"><h4>Edit</h4></a> | <button type="button" class="delete-course-btn">Delete post</button>
       </div>
     </article>
-  </li>
+  </div>
   {{/each}}
-</ol>
+
+
+<script src="/javascript/delete-course.js"></script>
 
