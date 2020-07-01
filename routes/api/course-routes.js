@@ -1,5 +1,7 @@
 const router = require('express').Router();
-const { Course, User } = require('../../models');
+const { Course, Teacher, Student, Grade } = require('../../models');
+const sequelize = require('../../config/connection');
+const withAuth = require('../../utils/auth');
 
 // get all users
 router.get('/', (req, res) => {

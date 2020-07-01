@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Student, Grade } = require('../../models');
 const sequelize = require('../../config/connection');
-const withAuth = require('../../utils/auth');
+// const withAuth = require('../../utils/auth');
 
 // get all students
 router.get('/', (req, res) => {
@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
         attributes: ['id', 'assignment', 'score']
       }
     ]
-   })
+  })
     .then(dbStudentData => res.json(dbStudentData))
     .catch(err => {
       console.log(err);
@@ -51,5 +51,19 @@ router.get('/:id', (req, res) => {
     });
 });
 
+// POST /api/student
+router.post('/', (req, res) => {
+  if (req.session) {
+    Student.create({
+      name: req.body.name,
+      post_id: req.body_id,
+    })
+      .then(dbStudentData => res.json(dbStudentData))
+      .catch(err => {
+        console.log(err);
+        res.status(400).json(err);
+      });
+  }
+});
 
 module.exports = router;
