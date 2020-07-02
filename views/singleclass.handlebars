@@ -22,70 +22,16 @@
       </tr>
     </thead>
     <tbody>
+      {{#each course.students as |student|}}
       <tr>
-        <td>Becky with the good hair</td>
-        <td>98%</td>
-        <td>79%</td>
-        <td>89%</td>
-        <td>0</td>
-      </tr>
-      <tr>
-        <td>Linda, Linda Listen</td>
-        <td>57%</td>
-        <td>65%</td>
-        <td>75%</td>
-        <td>5</td>
-      </tr>
-      <tr>
-        <td>Charlie bit my finger</td>
-        <td>97%</td>
-        <td>86%</td>
-        <td>88%</td>
-        <td>4</td>
-      </tr>
-      <tr>
-        <td>John Ryan</td>
-        <td>100%</td>
-        <td>100%</td>
-        <td>100%</td>
-        <td>0</td>
-      </tr>
-      <tr>
-        <td>Keyboard Cat</td>
-        <td>69%</td>
-        <td>93%</td>
-        <td>85%</td>
-        <td>3</td>
-      </tr>
-      <tr>
-        <td>Keyboard Cat</td>
-        <td>69%</td>
-        <td>93%</td>
-        <td>85%</td>
-        <td>3</td>
-      </tr>
-      <tr>
-        <td>Keyboard Cat</td>
-        <td>69%</td>
-        <td>93%</td>
-        <td>85%</td>
-        <td>3</td>
-      </tr>
-      <tr>
-        <td>Keyboard Cat</td>
-        <td>69%</td>
-        <td>93%</td>
-        <td>85%</td>
-        <td>3</td>
-      </tr>
-      <tr>
-        <td>Keyboard Cat</td>
-        <td>69%</td>
-        <td>93%</td>
-        <td>85%</td>
-        <td>3</td>
+        <td>{{student.name}}</td>
+          {{#each grades as |grade|}}
+            <td>{{grade.score}}</td>
+          {{/each}}
+          <td>0</td>
       </tr>
     </tbody>
+    {{/each}}
   </table>
 </div>
 
