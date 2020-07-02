@@ -3,6 +3,10 @@ const sequelize = require('../config/connection');
 const { Course, User } = require('../models');
 
 router.get('/', (req, res) => {
+  res.render('titlepage');
+});
+
+router.get('/homepage', (req, res) => {
   console.log(req.session);
     Course.findAll({
       attributes: [
@@ -20,8 +24,8 @@ router.get('/', (req, res) => {
       .then(dbCourseData => {
         const courses = dbCourseData.map(course => course.get({ plain: true }));
         res.render('homepage', { 
-          courses
-          // loggedIn: req.session.loggedIn
+          courses,
+          loggedIn: req.session.loggedIn
         });
       })
       .catch(err => {
@@ -32,7 +36,7 @@ router.get('/', (req, res) => {
 
   router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
-      res.redirect('/');
+      res.redirect('/homepage');
       return;
     }
   
@@ -71,7 +75,10 @@ router.get('/course/:id', (req, res) => {
         const course = dbCourseData.get({ plain: true });
   
         // pass data to template
-        res.render('singleclass', { course });
+        res.render('singleclass', {
+           course,
+           loggedIn: req.session.loggedIn
+          });
       })
       .catch(err => {
         console.log(err);

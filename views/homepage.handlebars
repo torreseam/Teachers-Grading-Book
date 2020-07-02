@@ -1,25 +1,20 @@
-{{!-- <div class="content d-flex justify-content-center flex-column">
-    <header >Grading Book</header>
-    <a class="align-self-center" href="/login"><button class="align-self-center btn btn-outline-dark rounded-pill bg-info" href="/login"><h3>Log In</h3></button></a>
-    <a class="align-self-center" href="/signup"><button class="align-self-center btn btn-outline-dark rounded-pill bg-info"><h3 class="signup">SignUp</h3></button></a>
-</div> --}}
-
 <nav class="d-flex justify-content-between navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="/"><h1>Grading Book</h1></a>
+    <a class="navbar-brand" href="/homepage"><h1>Grading Book</h1></a>
 
+    {{#if loggedIn}}
+    <div class="dropleft">
+      <button class="btn btn-lg btn-outline-dark rounded-pill bg-info dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+        <a href="/createcourse"><button class="dropdown-item" type="button">Create Course</button></a>
+        <button class="dropdown-item" type="button">Add Student</button>
+        <button id="logout" class="btn-no-style">logout</button>
+      </div>
+    </div>
+    {{else}}
     <a href="/login"><h2>login</h2></a>
     <a href="/signup"><h2>signup</h2></a>
-
-    <div class="dropleft">
-        <button class="btn btn-lg btn-outline-dark rounded-pill bg-info dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <a href="/createcourse"><button class="dropdown-item" type="button">Create Course</button></a>
-            <button class="dropdown-item" type="button">Add Student</button>
-            
-        </div>
-        <button id="logout" class="btn-no-style">logout</button>
-    </div>
+    {{/if}}
 </nav>
 
   {{#each courses as |course|}}
@@ -38,6 +33,9 @@
 
 
 <script src="/javascript/delete-course.js"></script>
+
+{{#if loggedIn}}
 <script src="/javascript/logout.js"></script>
+{{/if}}
         
 
