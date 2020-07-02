@@ -42,7 +42,10 @@ http://localhost:3001/
 
 ### Main Page Mackup
 
-![Homepage](./src/)   
+![Homepage](./src/GradeBookmainlogin.PNG)
+
+
+![Sign-up Page](./src/GradeBookSignup.PNG)   
 
 ## Questions
 ### [Mattkohl82 for GitHub](https://github.com/Mattkohl82)  
