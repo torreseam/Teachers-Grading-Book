@@ -60,11 +60,13 @@ nav button {
 }
 
 #footer {
+    display: flex;
     position: fixed;
     bottom: 0;
     width: 100%;
     height: 2.5rem;
     background-color: rgba(255, 255, 255, 0.363);
+    justify-content: center;
   }
 
 footer .repo:hover {
@@ -123,8 +125,15 @@ footer .repo:hover {
     background-color: rgba(255, 255, 255, 0.74);
 }
 
-.course-url {
+.course-title {
     font-size: 3rem;
 }
+
+.course-url {
+    font-size: 2rem;
+}
+
+
+
   
 
