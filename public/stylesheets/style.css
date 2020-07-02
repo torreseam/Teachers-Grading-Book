@@ -59,16 +59,6 @@ nav button {
     font-family: 'Times New Roman', Times, serif;
 }
 
-#footer {
-    display: flex;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 2.5rem;
-    background-color: rgba(255, 255, 255, 0.363);
-    justify-content: center;
-  }
-
 footer .repo:hover {
     color: white;
 }
@@ -126,14 +116,35 @@ footer .repo:hover {
 }
 
 .course-title {
-    font-size: 3rem;
+    font-size: 4rem;
+    color: white;
+    margin-bottom: -10px;
 }
 
 .course-url {
-    font-size: 2rem;
+    font-size: 3rem;
+    margin-top: -8px;
+    margin-bottom: -10px;
 }
 
 
+#page-container {
+    position: relative;
+    min-height: 100vh;
+  }
+  
+#content-wrap {
+    padding-bottom: 2.5rem;    /* Footer height */
+  }
+  
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;            /* Footer height */
+    background-color: rgba(255, 255, 255, 0.363);
+  }
 
+  
   
 
