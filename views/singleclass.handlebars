@@ -1,0 +1,111 @@
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+
+{{> navbar }}
+
+<main role="main" class="d-flex flex-column justify-content-center align-items-center">
+  <p class="course-title">{{course.title}}</p>   
+  <p class="course-url">{{course.course_url}}</p> 
+  <button type="button" class="btn btn-outline-dark rounded-pill bg-info delete-course-btn">Delete Course</button> 
+</main>
+
+
+
+<div class="container" style="width:75vw; background-color: rgba(255, 255, 255, 0.637);">
+  <table class="display" style="height: 25vh; width:70vw; background-color: rgba(255, 255, 255, 0.774);" >
+    <thead style="background-color: rgba(0, 0, 0, 0.226);">
+      <tr>
+        <th>Student</th>
+        <th>Quiz</th>
+        <th>Homework</th>
+        <th>Tests</th>
+        <th>Days Absent</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Becky with the good hair</td>
+        <td>98%</td>
+        <td>79%</td>
+        <td>89%</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>Linda, Linda Listen</td>
+        <td>57%</td>
+        <td>65%</td>
+        <td>75%</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>Charlie bit my finger</td>
+        <td>97%</td>
+        <td>86%</td>
+        <td>88%</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>John Ryan</td>
+        <td>100%</td>
+        <td>100%</td>
+        <td>100%</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>Keyboard Cat</td>
+        <td>69%</td>
+        <td>93%</td>
+        <td>85%</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>Keyboard Cat</td>
+        <td>69%</td>
+        <td>93%</td>
+        <td>85%</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>Keyboard Cat</td>
+        <td>69%</td>
+        <td>93%</td>
+        <td>85%</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>Keyboard Cat</td>
+        <td>69%</td>
+        <td>93%</td>
+        <td>85%</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>Keyboard Cat</td>
+        <td>69%</td>
+        <td>93%</td>
+        <td>85%</td>
+        <td>3</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+<script src="/javascript/delete-course.js"></script>
+
+<script>
+
+  $(document).ready(function() {
+    $('.display').DataTable({
+      'searching': false,
+      'info': false,
+      "lengthMenu": [[5], [5]]
+    });
+} );
+
+</script>
+

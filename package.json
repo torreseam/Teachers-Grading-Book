@@ -1,0 +1,32 @@
+{
+  "name": "Teachers-Grading-Book",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattkohl82/Teachers-Grading-Book.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mattkohl82/Teachers-Grading-Book/issues"
+  },
+  "homepage": "https://github.com/mattkohl82/Teachers-Grading-Book#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "connect-session-sequelize": "^6.1.1",
+    "datatables.net": "^1.10.21",
+    "datatables.net-dt": "^1.10.21",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
+    "express-session": "^1.17.1",
+    "mysql2": "^2.1.0",
+    "sequelize": "^5.21.12"
+  }
+}
