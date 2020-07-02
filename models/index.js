@@ -16,8 +16,8 @@ Course.belongsTo(User, {
 });
 
 //Students
-Student.belongsToMany(Course, {
-  through: 'studentCourse',
+Student.belongsTo(Course, {
+  // through: 'studentCourse',
   foreignKey: 'student_id'
 });
 

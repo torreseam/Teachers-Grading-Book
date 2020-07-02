@@ -55,7 +55,7 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
     Student.create({
       name: req.body.name,
-      user_id: req.body.user_id,
+      id: req.body.id,
     })
       .then(dbStudentData => res.json(dbStudentData))
       .catch(err => {
@@ -65,7 +65,7 @@ router.post('/', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-  Course.update(
+  Student.update(
     {
       name: req.body.name
     },
@@ -77,7 +77,7 @@ router.put('/:id', (req, res) => {
   )
     .then(dbStudentData => {
       if (!dbStudentData) {
-        res.status(404).json({ message: 'No Course found with this id' });
+        res.status(404).json({ message: 'No Student found with this id' });
       }
       res.json(dbStudentData);
     })
@@ -88,7 +88,7 @@ router.put('/:id', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-  Course.destroy({
+  Student.destroy({
     where: {
       id: req.params.id
     }

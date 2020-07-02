@@ -18,7 +18,8 @@
 - [License](#license)
 
 ## Description
-### A sequelize application that allows teachers to add/remove students to a course, maintain an accurate log of grades, attendance and assignments. Using a sequelize DB
+### Grading Book will be a web-based application that is intuitive and easy to use. It will provide the teacher with a secure place to store grades that can be accessed from home or mobile. Giving the teacher the ablilty to edit student grades, roster, and classes.
+
 
 ## Install
 ```
