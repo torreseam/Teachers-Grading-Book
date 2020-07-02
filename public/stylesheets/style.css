@@ -122,5 +122,9 @@ footer .repo:hover {
 .card {
     background-color: rgba(255, 255, 255, 0.74);
 }
+
+.course-url {
+    font-size: 3rem;
+}
   
 
