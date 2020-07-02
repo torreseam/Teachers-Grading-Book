@@ -2,11 +2,14 @@ async function newFormHandler(event) {
     event.preventDefault();
 
 
-    const response = await fetch(`/api/posts`, {
+    const title = document.querySelector('input[name="student-Name"]').value;
+    // const course_url = document.querySelector('input[name="submit"]').value;
+   
+
+    const response = await fetch(`/api/students`, {
         method: 'POST',
         body: JSON.stringify({
-            title,
-            post_url
+            name
         }),
         headers: {
             'Content-Type': 'application/json'
@@ -14,10 +17,10 @@ async function newFormHandler(event) {
     });
 
     if (response.ok) {
-        document.location.replace('/spreadsheet');
+        document.location.replace('/homepage');
     } else {
         alert(response.statusText);
     }
 }
 
-document.querySelector('.new-post-form').addEventListener('submit', newFormHandler);
+document.querySelector('.new-course-form').addEventListener('submit', newFormHandler);
