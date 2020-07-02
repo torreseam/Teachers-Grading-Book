@@ -1,22 +1,21 @@
 {{> navbar }}
 
-<section class="container2 d-flex flex-column justify-content-center align-items-center">
-    <h1>Create A Course</h1>
+<section class="container d-flex flex-column justify-content-center align-items-center">
+    <h1 class="title">Create A Course</h1>
     <form class="new-course-form">
-    <div>
-      <label for="course-title">Department</label>
-      <input type="text" id="course-title" name="course-title" />
-    </div>
-    <div>
-      <label for="course-url">Class Type</label>
-      <input id="course-url" name="course-url" />
-    </div>
-    {{!-- <div>
-      <label for="user-id">ID</label>
-      <input id="user-id" name="user-id" />
-    </div> --}}
-    <button type="submit" class="btn btn-outline-dark rounded-pill bg-info">Create</button>
-  </form>
+      <div class="d-flex flex-column justify-content-center align-items-center">
+        <label for="course-title"><h2>Department</h2></label>
+        <input class="input" type="text" id="course-title" name="course-title" placeholder="Enter a Department"/>
+      </div>
+      <div class="d-flex flex-column justify-content-center align-items-center" style="margin-top: 5px;">
+        <label for="course-url"><h2>Class Type</h2></label>
+        <input class="input" id="course-url" name="course-url" placeholder="Enter a Class Type"/>
+      </div>
+      <div class="d-flex flex-column justify-content-center align-items-center">
+        <button type="submit" class="btn btn-outline-dark rounded-pill bg-info">Create</button>
+      </div>
+      
+    </form>
 </section>
 
 <script src="/javascript/add-course.js"></script>

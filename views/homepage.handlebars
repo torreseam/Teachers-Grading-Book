@@ -1,18 +1,22 @@
 {{> navbar }}
 
-  {{#each courses as |course|}}
-  <div class="container ">
-    <article class="col card" style="max-width: 25vw; margin-bottom: 5px">
-      <div class="card-header">
-        <p {{course.course_url}}>{{course.title}}</p>
-        <span>({{course.course_url}})</span>
+<div class="container">
+  <div class="row">
+    {{#each courses as |course|}}
+    <div class="d-flex justify-content-center">
+      <div class="card text-center" style="max-width: 15vw; margin-bottom: 5px; margin-top: 5px">
+        <div class="card-header">
+          <h3 class="card-title">{{course.title}}</h3>
+        </div>
+      <div class="card-body">
+        <h4 class="card-text">{{course.course_url}}</h4>
+        <a href="/course/{{course.id}}"><button class="btn btn-outline-dark rounded-pill bg-info" type="submit">Go to class</button></a>
       </div>
-      <div class="card-footer">
-        {{course.user.username}} | <a href="/course/{{course.id}}"><h4>Edit</h4></a>
-      </div>
-    </article>
-  </div>
+      </div>.
+    </div>
   {{/each}}
+  </div>
+</div>
 
 
 
