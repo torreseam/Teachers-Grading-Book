@@ -69,7 +69,7 @@ footer .repo:hover {
 }
 
 .container {
-    margin-top: 15vh;
+    margin-top: 5vh;
 }
 
 .title {
@@ -109,14 +109,18 @@ footer .repo:hover {
     word-spacing: 1px;
 }
 
-/* .spreadsheet {
 
-} */
-
+<<<<<<< HEAD
 .gradebook-header {
     background-color: aquamarine;
     color: black;
     font-weight: bold;
+=======
+
+.input {
+    font-size: 1.5rem;
+    text-align-last: center;
+>>>>>>> c82e0bcba8ec58947806576f7a20db752575bd8d
 }
 
   

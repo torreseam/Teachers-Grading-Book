@@ -6,53 +6,37 @@ const withAuth = require('../../utils/auth');
 // get all users
 router.get('/', (req, res) => {
   Course.findAll({
-    attributes: ['id', 'name', 'department'],
+    attributes: ['id', 'course_url', 'title'],
     include: [
-      // include the Teacher and Student models here:
       {
-        model: Teacher,
-        attributes: ['id', 'name']
-      },
-      {
-        model: Student,
-        attributes: ['id', 'name']
+        model: User,
+        attributes: ['username']
       }
     ]
-   })
-    .then(dbRosterData => res.json(dbRosterData))
+  })
+    .then(dbCourseData => res.json(dbCourseData))
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
     });
 });
 
-
-// find one course
 router.get('/:id', (req, res) => {
   Course.findOne({
     where: {
       id: req.params.id
     },
-    attributes: ['id', 'name', 'department'],
+    attributes: ['id', 'course_url', 'title'],
     include: [
-      // include the Teacher and Student models here:
       {
-        model: Teacher,
-        attributes: ['id', 'name']
-      },
-      {
-        model: Student,
-        attributes: ['id', 'name'],
-          include: [{
-            model: Grade,
-            attributes: ['id', 'student_id', 'course_id', 'assignment', 'score']
-          }]
-        }
+        model: User,
+        attributes: ['username']
+      }
     ]
   })
     .then(dbCourseData => {
       if (!dbCourseData) {
-        res.status(404).json({ message: 'No course found with this id' });
+        res.status(404).json({ message: 'No Course found with this id' });
         return;
       }
       res.json(dbCourseData);
@@ -63,5 +47,59 @@ router.get('/:id', (req, res) => {
     });
 });
 
+router.post('/', (req, res) => {
+  Course.create({
+    title: req.body.title,
+    course_url: req.body.course_url,
+    user_id: req.body.user_id
+  })
+    .then(dbCourseData => res.json(dbCourseData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
-module.exports = router;
+router.put('/:id', (req, res) => {
+  Course.update(
+    {
+      title: req.body.title
+    },
+    {
+      where: {
+        id: req.params.id
+      }
+    }
+  )
+    .then(dbCourseData => {
+      if (!dbCourseData) {
+        res.status(404).json({ message: 'No Course found with this id' });
+      }
+      res.json(dbCourseData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+router.delete('/:id', (req, res) => {
+  Course.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
+    .then(dbCourseData => {
+      if (!dbCourseData) {
+        res.status(404).json({ message: 'No Course found with this id' });
+        return;
+      }
+      res.json(dbCourseData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+  module.exports = router;

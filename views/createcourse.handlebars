@@ -1,21 +1,43 @@
+<nav class="d-flex justify-content-between navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="/"><h1>Grading Book</h1></a>
+    <a href="/login"><h2>login</h2></a>
+    <a href="/signup"><h2>signup</h2></a>
+
+    {{!-- {{#if loggedIn}} --}}
+    <div class="dropleft">
+        <button class="btn btn-lg btn-outline-dark rounded-pill bg-info dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <a href="/createcourse"><button class="dropdown-item" type="button">Create Course</button></a>
+            <button class="dropdown-item" type="button">Add Student</button>
+            <button id="logout" class="dropdown-item" type="button">Log-out</button>
+        </div>
+    </div>
+  {{!-- {{else}}
+      <a href="/login"><h2>login</h2></a>
+      <a href="/signup"><h2>signup</h2></a>
+  {{/if}} --}}
+
+</nav>
+
+
 <form class="container2 d-flex flex-column justify-content-center align-items-center">
     <h1>Create A Course</h1>
-    <div class="d-flex flex-column justify-content-center align-items-center">
-        <label for="course-type"><h2>Department</h2></label>
-        <select class="department" id="type" name="type">
-            <option value="history">History</option>
-            <option value="english">English</option>
-            <option value="science">Science</option>
-            <option value="art">Art</option>
-            <option value="humanity">Humanity</option>                \
-            <option value="elective">Elective</option>
-        </select>
-    </div>
-    <div class="class-type d-flex flex-column justify-content-center align-items-center">
-        <label for="course-name"><h2>Course Name</h2></label>
-        <input class="course-name" type="text" id="class-type" placeholder="Enter Course Here" />
+    <form class="new-course-form">
+    <div>
+      <label for="course-title">Department</label>
+      <input type="text" id="course-title" name="course-title" />
     </div>
     <div>
-        <button class="btn btn-outline-dark rounded-pill bg-info" type="submit">Submit</button>
+      <label for="course-url">Class Type</label>
+      <input id="course-url" name="course-url" />
     </div>
+    <div>
+      <label for="user-id">ID</label>
+      <input id="user-id" name="user-id" />
+    </div>
+    <button type="submit" class="btn">Create</button>
+  </form>
 </form>
+
+<script src="/javascript/add-course.js"></script>
