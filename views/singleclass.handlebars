@@ -1,27 +1,10 @@
-<nav class="d-flex justify-content-between navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="/homepage"><h1>Grading Book</h1></a>
-
-    <a href="/login"><h2>login</h2></a>
-    <a href="/signup"><h2>signup</h2></a>
-
-    <div class="dropleft">
-        <button class="btn btn-lg btn-outline-dark rounded-pill bg-info dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <a href="/createcourse"><button class="dropdown-item" type="button">Create Course</button></a>
-            <button class="dropdown-item" type="button">Add Student</button>
-            <button id="logout" class="btn-no-style">logout</button>
-        </div>
-      </div>
-</nav>
+{{> navbar }}
 
 <main role="main" class="spreadsheet d-flex flex-column justify-content-center align-items-center">
   <h1 class="course-title">{{course.title}}</h1>   
   <h2>({{course.course_url}})</h2> 
-    <div class="spreadsheet welcome-div">      
-      <div id='student'>
-      </div>
-    </div>    
+    <button type="button" class="delete-course-btn">Delete Course</button>   
 </main>
 
+<script src="/javascript/delete-course.js"></script>
 <script src="/javascript/spreadsheet.js"></script>

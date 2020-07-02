@@ -50,7 +50,7 @@ router.post('/', (req, res) => {
   Course.create({
     title: req.body.title,
     course_url: req.body.course_url,
-    user_id: req.body.user_id
+    user_id: req.session.user_id
   })
     .then(dbCourseData => res.json(dbCourseData))
     .catch(err => {

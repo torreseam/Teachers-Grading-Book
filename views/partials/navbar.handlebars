@@ -1,0 +1,18 @@
+<nav class="d-flex justify-content-between navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="/homepage"><h1>Grading Book</h1></a>
+
+    {{#if loggedIn}}
+    
+    <button class="btn btn-outline-dark rounded-pill bg-info" type="button" onclick="location.href='/createcourse'">Create Course</button>
+    <button class="btn btn-outline-dark rounded-pill bg-info" type="button" class="btn btn-outline-dark rounded-pill bg-info">Add Student</button>
+    <button id="logout" class="btn btn-outline-dark rounded-pill bg-info">logout</button>
+      
+    {{else}}
+    <a href="/login"><h2>login</h2></a>
+    <a href="/signup"><h2>signup</h2></a>
+    {{/if}}
+</nav>
+
+{{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{/if}}
