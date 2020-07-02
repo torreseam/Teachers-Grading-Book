@@ -1,43 +1,25 @@
-{{!-- <div class="content d-flex justify-content-center flex-column">
-    <header >Grading Book</header>
-    <a class="align-self-center" href="/login"><button class="align-self-center btn btn-outline-dark rounded-pill bg-info" href="/login"><h3>Log In</h3></button></a>
-    <a class="align-self-center" href="/signup"><button class="align-self-center btn btn-outline-dark rounded-pill bg-info"><h3 class="signup">SignUp</h3></button></a>
-</div> --}}
+{{> navbar }}
 
-<nav class="d-flex justify-content-between navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="/"><h1>Grading Book</h1></a>
-
-    <a href="/login"><h2>login</h2></a>
-    <a href="/signup"><h2>signup</h2></a>
-
-    <div class="dropleft">
-        <button class="btn btn-lg btn-outline-dark rounded-pill bg-info dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <a href="/createcourse"><button class="dropdown-item" type="button">Create Course</button></a>
-            <button class="dropdown-item" type="button">Add Student</button>
-            
+<div class="container">
+  <div class="row">
+    {{#each courses as |course|}}
+    <div class="d-flex justify-content-center">
+      <div class="card text-center" style="max-width: 15vw; margin-bottom: 5px; margin-top: 5px">
+        <div class="card-header">
+          <h3 class="card-title">{{course.title}}</h3>
         </div>
-        <button id="logout" class="btn-no-style">logout</button>
+      <div class="card-body">
+        <h4 class="card-text">{{course.course_url}}</h4>
+        <a href="/course/{{course.id}}"><button class="btn btn-outline-dark rounded-pill bg-info" type="submit">Go to class</button></a>
+      </div>
+      </div>.
     </div>
-</nav>
-
-  {{#each courses as |course|}}
-  <div class="container ">
-    <article class="col card" style="max-width: 25vw; margin-bottom: 5px">
-      <div class="card-header">
-        <p {{course.course_url}}>{{course.title}}</p>
-        <span>({{course.course_url}})</span>
-      </div>
-      <div class="card-footer">
-        {{course.user.username}} | <a href="/course/{{course.id}}"><h4>Edit</h4></a> | <button type="button" class="delete-course-btn">Delete post</button>
-      </div>
-    </article>
-  </div>
   {{/each}}
+  </div>
+</div>
 
 
-<script src="/javascript/delete-course.js"></script>
-<script src="/javascript/logout.js"></script>
-        
+
+
+
 

@@ -1,36 +1,60 @@
-<nav class="d-flex justify-content-between navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="/"><h1>Grading Book</h1></a>
-    <a href="/login"><h2>login</h2></a>
-    <a href="/signup"><h2>signup</h2></a>
-
-    <div class="dropleft">
-        <button class="btn btn-lg btn-outline-dark rounded-pill bg-info dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <button class="dropdown-item" type="button">Create Course</button>
-            <button class="dropdown-item" type="button">Add Student</button>
-            <button id="logout" class="dropdown-item" type="button">Log-out</button>
-        </div>
-    </div>
-</nav>
-
-
-<article class="card" style="max-width: 25vw; margin-bottom: 5px">
-  <div class="card-header">
-    <p>{{course.title}}</p>
-    <span>({{course.course_url}})</span>
-  </div>
-  <div class="card-footer">
-    {{course.user.username}}
-  </div>
-</article>
+{{> navbar }}
 
 <main role="main" class="spreadsheet d-flex flex-column justify-content-center align-items-center">
-  <h1 class="course-title">{{course.title}}</h1>    
-    <div class="spreadsheet welcome-div">      
-      <div id='student'>
-      </div>
-    </div>    
+  <h1 class="course-title title">{{course.title}}</h1>   
+  <h2 class="course-url">{{course.course_url}}</h2> 
+  <button type="button" class="btn btn-outline-dark rounded-pill bg-info delete-course-btn">Delete Course</button> 
 </main>
+<div class="container">
+  <table class="table table-bordered table-hover" style="margin-top: 5px; background-color: rgba(255, 255, 255, 0.87);">
+    <thead class="text-center">
+      <tr>
+        <th>Student</th>
+        <th>Quiz</th>
+        <th>Homework</th>
+        <th>Tests</th>
+        <th>Days Absent</th>
+      </tr>
+    <tbody class="text-center">
+      <tr>
+        <td>Becky with the good hair</td>
+        <td>98%</td>
+        <td>79%</td>
+        <td>89%</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>Linda, Linda Listen</td>
+        <td>57%</td>
+        <td>65%</td>
+        <td>75%</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>Charlie bit my finger</td>
+        <td>97%</td>
+        <td>86%</td>
+        <td>88%</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>John Ryan</td>
+        <td>100%</td>
+        <td>100%</td>
+        <td>100%</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>Keyboard Cat</td>
+        <td>69%</td>
+        <td>93%</td>
+        <td>85%</td>
+        <td>3</td>
+      </tr>
+    </tbody>
+    </thead>
+  </table>
+</div>
 
+<script src="/javascript/delete-course.js"></script>
 <script src="/javascript/spreadsheet.js"></script>

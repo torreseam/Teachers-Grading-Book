@@ -23,7 +23,6 @@ body {
     color: rgb(255, 255, 255);
     text-align: center;
     font-size: 6rem;
-    font-weight: bold;
     word-spacing: -30px;
 
 }
@@ -49,6 +48,10 @@ nav {
 }
 
 nav h1:hover {
+    color: white;
+}
+
+nav h4:hover {
     color: white;
 }
 
@@ -123,5 +126,12 @@ footer .repo:hover {
 >>>>>>> c82e0bcba8ec58947806576f7a20db752575bd8d
 }
 
+.card {
+    background-color: rgba(255, 255, 255, 0.74);
+}
+
+.course-url {
+    font-size: 3rem;
+}
   
 
