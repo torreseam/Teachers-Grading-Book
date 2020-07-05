@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Course, User } = require('../models');
+const { Course, User, Student, Grade } = require('../models');
 
 router.get('/', (req, res) => {
   res.render('titlepage');
@@ -47,7 +47,7 @@ router.get('/homepage', (req, res) => {
     res.render('signup');
   });
 
-  
+// get students for the course  
 router.get('/course/:id', (req, res) => {
     Course.findOne({
       where: {
@@ -62,6 +62,14 @@ router.get('/course/:id', (req, res) => {
         {
           model: User,
           attributes: ['username']
+        },
+        {
+          model: Student,
+          attributes: ['id', 'name'],
+          include: [{
+            model: Grade,
+            attributes: ['id', 'student_id', 'course_id', 'assignment', 'score']
+          }]
         }
       ]
     })
