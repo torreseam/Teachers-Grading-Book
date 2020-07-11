@@ -8,6 +8,8 @@
 </p>
 
 <p align="center">
+    <img src="./src/titlepage.jpg" alt="mainpage"/>
+</p>
 
 
 ## Table of Contents
@@ -24,10 +26,11 @@
 ## Install
 ```
 npm init
-npm install mysql2, sequelize, connect-session-sequelize,express-session, dotenv, bcrypt
+
+```
 
 ## Usage
-### Raw - In the terminal Run  
+### In the terminal Run  
 ```
 npm start
 
@@ -38,15 +41,15 @@ http://localhost:3001/
 [Teacher Grade Book](https://github.com/mattkohl82/Teachers-Grading-Book.git)    
 
 ### Heroku deployment page 
-[Teacher Grade Book](https://) 
+[Teacher Grade Book](https://rocky-sea-29203.herokuapp.com/) 
 
 
 ### Main Page Mackup
 
-![Homepage](./src/GradeBookmainlogin.PNG)
+![Main Page](./src/mainpage.jpg)
 
 
-![Sign-up Page](./src/GradeBookSignup.PNG)   
+![Single Class](./src/singleclass.jpg)   
 
 ## Questions
 ### [Mattkohl82 for GitHub](https://github.com/Mattkohl82)  
