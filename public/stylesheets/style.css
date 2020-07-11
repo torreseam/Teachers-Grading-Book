@@ -145,6 +145,13 @@ footer .repo:hover {
     background-color: rgba(255, 255, 255, 0.363);
   }
 
-  
+  .input_add {
+    font-size: 1rem;
+    text-align-last: center;
+}
+
+  .input_number {
+      width: 10%;
+  }
   
 

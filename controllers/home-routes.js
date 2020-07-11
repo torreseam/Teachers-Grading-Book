@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Course, User } = require('../models');
+const { Course, User, Student } = require('../models');
 
 router.get('/', (req, res) => {
   res.render('titlepage');
@@ -59,6 +59,10 @@ router.get('/course/:id', (req, res) => {
         'title'
       ],
       include: [
+          {
+            model: Student,
+            attributes: ['id', 'name']
+          },
         {
           model: User,
           attributes: ['username']
@@ -85,5 +89,7 @@ router.get('/course/:id', (req, res) => {
         res.status(500).json(err);
       });
   });
+
+  
 
 module.exports = router;

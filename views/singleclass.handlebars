@@ -2,15 +2,43 @@
 
 {{> navbar }}
 
-<main role="main" class="d-flex flex-column justify-content-center align-items-center">
-  <p class="course-title">{{course.title}}</p>   
-  <p class="course-url">{{course.course_url}}</p> 
-  <button type="button" class="btn btn-outline-dark rounded-pill bg-info delete-course-btn">Delete Course</button> 
+<main role="main" class="d-flex justify-content-center">
+  <div class="container signup-form d-flex flex-column justify-content-center align-items-center">
+    <p class="course-title">{{course.title}}</p>   
+    <p class="course-url">{{course.course_url}}{{student.quiz}}</p> 
+    <button type="button" class="btn btn-outline-dark rounded-pill bg-info delete-course-btn">Delete Course</button>
+  </div>
+  <form class="container signup-form d-flex flex-column justify-content-center">
+    <h2 style="color: white">Add Student</h2>
+    <div class="d-flex  flex-row align-items-center">
+        <label for="student-name"><h4>Name:</h4></label>
+        <input class="input_add" type="text" id="student-name" placeholder="Enter Name"/>
+    </div>
+    <div class="d-flex flex-row  align-items-center">
+        <label for="quiz"><h4>Quiz:</h4></label>
+        <input class="input_number" type="quiz" id="quiz"/>
+    </div>
+    <div class="d-flex flex-row  align-items-center">
+        <label for="homework"><h4>Homework:</h4></label>
+        <input class="input_number" type="homework" id="homework"/>
+    </div>
+    <div class="d-flex flex-row  align-items-center">
+        <label for="tests"><h4>Tests:</h4></label>
+        <input class="input_number" type="tests" id="tests"/>
+    </div>
+    <div class="d-flex flex-row align-items-center">
+        <label for="days-absent"><h4>Days Absent:</h4></label>
+        <input class="input_number" type="days-absent" id="days-absent"/>
+    </div>
+    <div>
+        <button class="btn btn-outline-dark rounded-pill bg-info" type="submit">Add</button>
+    </div>
+</form>
+  </div>
 </main>
 
 
-
-<div class="container" style="width:75vw; background-color: rgba(255, 255, 255, 0.637);">
+<div class="container" style="width:75vw; background-color: rgba(255, 255, 255, 0.637); margin-bottom: 50px">
   <table class="display" style="height: 25vh; width:70vw; background-color: rgba(255, 255, 255, 0.774);" >
     <thead style="background-color: rgba(0, 0, 0, 0.226);">
       <tr>
@@ -22,73 +50,18 @@
       </tr>
     </thead>
     <tbody>
+      {{#each this}}
       <tr>
-        <td>Becky with the good hair</td>
-        <td>98%</td>
-        <td>79%</td>
-        <td>89%</td>
-        <td>0</td>
+        <td>{{student.name}}</td>
+        <td>{{student.quiz}}</td>
+        <td>{{student.homework}}</td>
+        <td>{{student.tests}}</td>
+        <td>{{student.days_absent}}</td>
       </tr>
-      <tr>
-        <td>Linda, Linda Listen</td>
-        <td>57%</td>
-        <td>65%</td>
-        <td>75%</td>
-        <td>5</td>
-      </tr>
-      <tr>
-        <td>Charlie bit my finger</td>
-        <td>97%</td>
-        <td>86%</td>
-        <td>88%</td>
-        <td>4</td>
-      </tr>
-      <tr>
-        <td>John Ryan</td>
-        <td>100%</td>
-        <td>100%</td>
-        <td>100%</td>
-        <td>0</td>
-      </tr>
-      <tr>
-        <td>Keyboard Cat</td>
-        <td>69%</td>
-        <td>93%</td>
-        <td>85%</td>
-        <td>3</td>
-      </tr>
-      <tr>
-        <td>Keyboard Cat</td>
-        <td>69%</td>
-        <td>93%</td>
-        <td>85%</td>
-        <td>3</td>
-      </tr>
-      <tr>
-        <td>Keyboard Cat</td>
-        <td>69%</td>
-        <td>93%</td>
-        <td>85%</td>
-        <td>3</td>
-      </tr>
-      <tr>
-        <td>Keyboard Cat</td>
-        <td>69%</td>
-        <td>93%</td>
-        <td>85%</td>
-        <td>3</td>
-      </tr>
-      <tr>
-        <td>Keyboard Cat</td>
-        <td>69%</td>
-        <td>93%</td>
-        <td>85%</td>
-        <td>3</td>
-      </tr>
+      {{/each}}
     </tbody>
   </table>
 </div>
-
 
 
 
