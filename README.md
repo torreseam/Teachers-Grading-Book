@@ -53,8 +53,8 @@ http://localhost:3001/
 ![Single Class](./src/singleclass.jpg)   
 
 ## Questions
-### [Mattkohl82 for GitHub](https://github.com/Mattkohl82)  
-### mattkohl82@gmail.com for ✉️ email 
+### [torreseam for GitHub](https://github.com/torreseam)  
+### torreseam.purdue@gmail.com for ✉️ email 
 
 
   ## License
